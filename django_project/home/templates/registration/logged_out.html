@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>ログアウトしました</title>
+</head>
+<body>
+    <h2>ログアウトしました。</h2>
+    <a href="{% url 'login' %}">ログインページに戻る</a>
+
+    <hr>
+
+    <!-- もう一度ログアウト（POSTフォーム） -->
+    <form method="post" action="{% url 'logout' %}">
+        {% csrf_token %}
+        <button type="submit">ログアウトする（POST送信）</button>
+    </form>
+</body>
+</html>
